@@ -74,7 +74,7 @@ export const login = async (req, res) => {
           id: userexits._id,
           username: userexits.username,
         },
-        process.env.SECRET
+        "myselfvinaykumar"
       );
 
       // Setting jwt token in cookie as 'access_token'

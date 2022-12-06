@@ -18,7 +18,7 @@ app.use(express.static("public"));
 app.use(cookieParser("myselfvinaykumar"));
 app.use(
   session({
-    secret: "myselfvinaykumar",
+    secret: process.env.SECRET,
     cookie: { maxAge: 60000 },
     resave: true,
     saveUninitialized: true,
@@ -67,7 +67,7 @@ app.get("*", function (req, res) {
 });
 
 mongoose
-  .connect(process.env.DATABASE_URL)
+  .connect(process.env.DATABASEURL)
   .then(() => console.log("Data Base connected"))
   .catch((err) => console.log(err));
 
